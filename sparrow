@@ -7,13 +7,14 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
 ]=]
 
--- Instances: 91 | Scripts: 19 | Modules: 0
+-- Instances: 93 | Scripts: 20 | Modules: 0
 local G2L = {};
 
 -- StarterGui.SparrowUI
 G2L["1"] = Instance.new("ScreenGui", game.CoreGui);
 G2L["1"]["Name"] = [[SparrowUI]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["1"]["ResetOnSpawn"] = false;
 
 -- StarterGui.SparrowUI.Main
 G2L["2"] = Instance.new("Frame", G2L["1"]);
@@ -710,61 +711,71 @@ G2L["53"]["Name"] = [[OutputFrame]];
 G2L["54"] = Instance.new("UICorner", G2L["53"]);
 
 
--- StarterGui.SparrowUI.Main.OutputFrame.scroll
+-- StarterGui.SparrowUI.Main.OutputFrame.ScrollingFrame
 G2L["55"] = Instance.new("ScrollingFrame", G2L["53"]);
 G2L["55"]["Active"] = true;
 G2L["55"]["BorderSizePixel"] = 0;
-G2L["55"]["CanvasSize"] = UDim2.new(0, 0, 3, 0);
+G2L["55"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
 G2L["55"]["BackgroundColor3"] = Color3.fromRGB(64, 64, 64);
 G2L["55"]["Size"] = UDim2.new(0.9602272510528564, 0, 0.9398496150970459, 0);
 G2L["55"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["55"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["55"]["Position"] = UDim2.new(0.02556818164885044, 0, 0.03308472782373428, 0);
-G2L["55"]["Name"] = [[scroll]];
 
--- StarterGui.SparrowUI.Main.OutputFrame.scroll.UICorner
+-- StarterGui.SparrowUI.Main.OutputFrame.ScrollingFrame.UICorner
 G2L["56"] = Instance.new("UICorner", G2L["55"]);
 
 
+-- StarterGui.SparrowUI.Main.OutputFrame.ScrollingFrame.Frame
+G2L["57"] = Instance.new("Frame", G2L["55"]);
+G2L["57"]["BorderSizePixel"] = 0;
+G2L["57"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
+G2L["57"]["Size"] = UDim2.new(0, 338, 0, 250);
+G2L["57"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+-- StarterGui.SparrowUI.Main.OutputFrame.ScrollingFrame.LocalScript
+G2L["58"] = Instance.new("LocalScript", G2L["55"]);
+
+
 -- StarterGui.SparrowUI.Main.OutputFrame.outputUpdate
-G2L["57"] = Instance.new("Script", G2L["53"]);
-G2L["57"]["Name"] = [[outputUpdate]];
+G2L["59"] = Instance.new("Script", G2L["53"]);
+G2L["59"]["Name"] = [[outputUpdate]];
 
 -- StarterGui.SparrowUI.Main.OutputFrame.outputUpdate.blankLine
-G2L["58"] = Instance.new("TextLabel", G2L["57"]);
-G2L["58"]["ZIndex"] = 10;
-G2L["58"]["BorderSizePixel"] = 0;
-G2L["58"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["58"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["58"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["58"]["TextSize"] = 18;
-G2L["58"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["58"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["58"]["Text"] = [[]];
-G2L["58"]["Name"] = [[blankLine]];
-G2L["58"]["BackgroundTransparency"] = 1;
+G2L["5a"] = Instance.new("TextLabel", G2L["59"]);
+G2L["5a"]["ZIndex"] = 10;
+G2L["5a"]["BorderSizePixel"] = 0;
+G2L["5a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["5a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5a"]["TextSize"] = 18;
+G2L["5a"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5a"]["Text"] = [[]];
+G2L["5a"]["Name"] = [[blankLine]];
+G2L["5a"]["BackgroundTransparency"] = 1;
 
 -- StarterGui.SparrowUI.OpenButton
-G2L["59"] = Instance.new("TextButton", G2L["1"]);
-G2L["59"]["TextWrapped"] = true;
-G2L["59"]["BorderSizePixel"] = 0;
-G2L["59"]["TextScaled"] = true;
-G2L["59"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["59"]["TextSize"] = 14;
-G2L["59"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["59"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["59"]["Size"] = UDim2.new(0.12330456078052521, 0, 0.08817635476589203, 0);
-G2L["59"]["Name"] = [[OpenButton]];
-G2L["59"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["59"]["Text"] = [[Open]];
-G2L["59"]["Position"] = UDim2.new(0.028360050171613693, 0, 0.4248496890068054, 0);
+G2L["5b"] = Instance.new("TextButton", G2L["1"]);
+G2L["5b"]["TextWrapped"] = true;
+G2L["5b"]["BorderSizePixel"] = 0;
+G2L["5b"]["TextScaled"] = true;
+G2L["5b"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5b"]["TextSize"] = 14;
+G2L["5b"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5b"]["Size"] = UDim2.new(0.12330456078052521, 0, 0.08817635476589203, 0);
+G2L["5b"]["Name"] = [[OpenButton]];
+G2L["5b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5b"]["Text"] = [[Open]];
+G2L["5b"]["Position"] = UDim2.new(0.028360050171613693, 0, 0.4248496890068054, 0);
 
 -- StarterGui.SparrowUI.OpenButton.UICorner
-G2L["5a"] = Instance.new("UICorner", G2L["59"]);
+G2L["5c"] = Instance.new("UICorner", G2L["5b"]);
 
 
 -- StarterGui.SparrowUI.OpenButton.LocalScript
-G2L["5b"] = Instance.new("LocalScript", G2L["59"]);
+G2L["5d"] = Instance.new("LocalScript", G2L["5b"]);
 
 
 -- StarterGui.SparrowUI.Main.TitleFrame.CloseButton.LocalScript
@@ -1079,9 +1090,53 @@ local script = G2L["52"];
 	end)
 end;
 task.spawn(C_52);
+-- StarterGui.SparrowUI.Main.OutputFrame.ScrollingFrame.LocalScript
+local function C_58()
+local script = G2L["58"];
+	local Frame = script.Parent.Frame
+	local ScrollingFrame = script.Parent
+	
+	
+	
+	local UIListLayout = Instance.new("UIListLayout")
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout.Parent = Frame
+	
+	
+	
+	
+	
+	local function AddTextLine(text)
+		local TextLabel = Instance.new("TextLabel")
+		TextLabel.Size = UDim2.new(1, 0, 0, 20)
+		TextLabel.BackgroundTransparency = 1
+		TextLabel.Text = text
+		TextLabel.Font = Enum.Font.GothamBold
+		TextLabel.TextWrapped = true
+		TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+		TextLabel.TextYAlignment = Enum.TextYAlignment.Top
+		TextLabel.TextSize = 14
+		TextLabel.TextColor3 = Color3.new(1, 1, 1) -- Set text color to black
+		TextLabel.Parent = Frame
+	
+		-- Update the ScrollingFrame's CanvasSize
+		ScrollingFrame.CanvasSize = UDim2.new(0, UIListLayout.AbsoluteContentSize.X, 0, UIListLayout.AbsoluteContentSize.Y)
+	end
+	
+	-- Redirect console output to the ScrollingFrame
+	local function ConsoleOutput(message, messageType)
+		if messageType == Enum.MessageType.MessageOutput then
+			local time = os.date("%H:%M:%S") -- Get the current time
+			AddTextLine("[" .. time .. "] " .. message) -- Add time prefix to the message
+		end
+	end
+	
+	game:GetService("LogService").MessageOut:Connect(ConsoleOutput)
+end;
+task.spawn(C_58);
 -- StarterGui.SparrowUI.OpenButton.LocalScript
-local function C_5b()
-local script = G2L["5b"];
+local function C_5d()
+local script = G2L["5d"];
 	script.Parent.Active = true
 	script.Parent.Selectable = true
 	script.Parent.Draggable = true
@@ -1094,6 +1149,6 @@ local script = G2L["5b"];
 		script.Parent.Parent.Main:TweenPosition(UDim2.new(0.189, 0,0.172, 0), "Out", "Linear", 0.5)
 	end)
 end;
-task.spawn(C_5b);
+task.spawn(C_5d);
 
 return G2L["1"], require;
